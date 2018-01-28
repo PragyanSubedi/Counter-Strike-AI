@@ -8,6 +8,7 @@ from numpy.linalg import lstsq
 from directkeys import PressKey, ReleaseKey, W, A, S, D
 from statistics import mean
 
+
 def roi(img, vertices):
     
     #blank mask:
@@ -27,6 +28,7 @@ def draw_lanes(img, lines, color=[0, 255, 255], thickness=3):
 
         # finds the maximum y value for a lane marker 
         # (since we cannot assume the horizon will always be at the same point.)
+
         ys = []  
         for i in lines:
             for ii in i:
@@ -182,6 +184,8 @@ while True:
     new_screen,original_image, m1, m2 = process_img(screen)
     #cv2.imshow('window', new_screen)
     cv2.imshow('window2',cv2.cvtColor(original_image, cv2.COLOR_BGR2RGB))
+
+
 
     if m1 < 0 and m2 < 0:
         right()
